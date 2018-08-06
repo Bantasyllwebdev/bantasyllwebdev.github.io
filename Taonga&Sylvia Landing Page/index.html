@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Startup</title>
+
+<div id="countdown">
+  <div id='tiles'></div>
+  <div class="labels">
+    <li>Days</li>
+    <li>Hours</li>
+    <li>Mins</li>
+    <li>Secs</li>
+  </div>
+</div>
+
+
+    <!-- Google Fonts -->
+ 
+ 
+
+
+<link href="https://fonts.googleapis.com/css?family=Alegreya:900i|Oleo+Script+Swash+Caps:700" rel="stylesheet">
+    <!-- Note that the below Bootstrap file is a specific version. If you grab the most
+    current from Bootstrap website, you will see the button grow transition being a lot faster
+    than in my video. Use whichever style sheet you like best! -->
+    <!-- Bootstrap CSS from a CDN. This way you don't have to include the bootstrap file yourself -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- My own stylesheet -->
+    <link href="style.css" rel="stylesheet">
+<script>
+var target_date = new Date("April 13, 2019 15:37:25").getTime() + (1000*3600*48); // set the countdown date
+var days, hours, minutes, seconds; // variables for time units
+
+var countdown = document.getElementById("tiles"); // get tag element
+
+getCountdown();
+
+setInterval(function () { getCountdown(); }, 1000);
+
+function getCountdown(){
+
+	// find the amount of "seconds" between now and target
+	var current_date = new Date().getTime();
+	var seconds_left = (target_date - current_date) / 1000;
+
+	days = pad( parseInt(seconds_left / 86400) );
+	seconds_left = seconds_left % 86400;
+		 
+	hours = pad( parseInt(seconds_left / 3600) );
+	seconds_left = seconds_left % 3600;
+		  
+	minutes = pad( parseInt(seconds_left / 60) );
+	seconds = pad( parseInt( seconds_left % 60 ) );
+
+	// format countdown string + set tag value
+	countdown.innerHTML = "<span>" + days + "</span><span>" + hours + "</span><span>" + minutes + "</span><span>" + seconds + "</span>"; 
+}
+
+function pad(n) {
+	return (n < 10 ? '0' : '') + n;
+}
+      </script>
+  </head>
+
+
+  <body>
+
+    <header class="startup text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-12 my-auto">
+            <h1 class="text-uppercase faded">
+
+                <i>Taonga  & Sylvia  <p><br>would like to invite you to join us as we say I do</p> </i>
+
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-12 my-auto">
+
+<!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://bantasyll.us18.list-manage.com/subscribe/post?u=5f17892051e684f1ea2fad347&amp;id=73052a75be" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+	
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5f17892051e684f1ea2fad347_73052a75be" tabindex="-1" value=""></div>
+    <div class="clear"><input class="btn btn-primary btn-xl" type="submit" value="Find out More" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+
+<!--End mc_embed_signup-->
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+  </body>
+
+</html>
